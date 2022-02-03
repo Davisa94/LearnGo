@@ -16,22 +16,35 @@ import (
 	"strconv"
 )
 
-func arrayPrinter(fizzyWord []string) {
-	for _, item := range fizzyWord {
+func arrayPrinter(fizzyWords []string) {
+	for _, item := range fizzyWords {
 		fmt.Println(item)
 	}
 
 }
 
+func staggeredArrayPrinter(fizzyWords []string) {
+	for i := range fizzyWords {
+		if i%2 == 0 {
+			fmt.Println("\t", fizzyWords[i])
+		} else {
+			fmt.Println(fizzyWords[i])
+		}
+	}
+}
+
 func fizzBuzzLogic(num int) string {
-	switch {
-	case num%3 == 0:
-		return "Fizz"
-	case num%5 == 0:
-		return "Buzz"
-	default:
+	var temp = ""
+	if num%3 == 0 {
+		temp += "Fizz"
+	}
+	if num%5 == 0 {
+		temp += "Buzz"
+	}
+	if temp == "" {
 		return strconv.Itoa(num)
 	}
+	return temp
 
 }
 
@@ -51,4 +64,9 @@ func main() {
 	fmt.Println("========================\n")
 	arrayPrinter(fizzyBuzzy)
 	fmt.Println("========================\n")
+	fmt.Println("Formatted:\n")
+	fmt.Println("========================\n")
+	staggeredArrayPrinter(fizzyBuzzy)
+	fmt.Println("========================\n")
+
 }
