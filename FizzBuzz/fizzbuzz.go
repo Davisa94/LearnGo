@@ -13,11 +13,24 @@ package main
 
 import (
 	"fmt"
+	"strconv"
 )
 
 func arrayPrinter(fizzyWord string) {
 	for _, item := range fizzyWord {
 		fmt.Println(item)
+	}
+
+}
+
+func fizzBuzzLogic(num int) string {
+	switch {
+	case num%3 == 0:
+		return "Fizz"
+	case num%5 == 0:
+		return "Buzz"
+	default:
+		return strconv.Itoa(num)
 	}
 
 }
