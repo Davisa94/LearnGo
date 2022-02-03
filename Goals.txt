@@ -1,0 +1,6 @@
+Todays goal is to learn the Programming language Go blind, having never used or seen it before.
+To that end by the end of stream I want to be able to have accomplished the following:
+Create 3 apps:
+*Hello World
+*FizzBuzz
+*Fibonacci
