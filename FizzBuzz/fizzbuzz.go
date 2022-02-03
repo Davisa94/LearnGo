@@ -16,7 +16,7 @@ import (
 	"strconv"
 )
 
-func arrayPrinter(fizzyWord string) {
+func arrayPrinter(fizzyWord []string) {
 	for _, item := range fizzyWord {
 		fmt.Println(item)
 	}
@@ -35,6 +35,20 @@ func fizzBuzzLogic(num int) string {
 
 }
 
+// Given a limit or size execute the logic on every number from 0
+// to the size
+func fizzyBuzz(size int) []string {
+	fizzyArray := make([]string, size+1)
+	for iteration := range fizzyArray {
+		fizzyArray[iteration] = fizzBuzzLogic(iteration)
+	}
+	return fizzyArray
+}
+
 func main() {
-	fmt.Println("e")
+	fizzyBuzzy := fizzyBuzz(100)
+	fmt.Println("Not Formatted:\n")
+	fmt.Println("========================\n")
+	arrayPrinter(fizzyBuzzy)
+	fmt.Println("========================\n")
 }
